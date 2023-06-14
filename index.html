@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+
+  <!-- Sign-up form start -->
+
+   <div class="main-container" id="main">
+       <div class="left-container">
+        <span>Stay updated!</span>
+
+  <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+  <li><img src="icon-list.svg" alt="Tick" srcset="">Product discovery and building what matters</li>
+  <li><img src="icon-list.svg" alt="Tick" srcset="">Measuring to ensure updates are a success</li>
+  <li><img src="icon-list.svg" alt="Tick" srcset="">And much more!</li>
+
+  <div class="email-ver">
+    <li id="emailadress">Email address</li>
+    <li id="Verification" style="font-size: 15px;font-weight: bold; margin-bottom: 5px; color:  hsl(4, 100%, 67%);"> </li>
+  </div>
+ <input type="email" class="text" id="Enteremail" placeholder="email@company.com">
+  
+  <button type="submit" class="btn" id="click" onclick="validation()">Subscribe to monthly newsletter</button> 
+       </div>
+       <div class="photo">
+        <img src="illustration-sign-up-desktop.svg" alt="image" srcset="">
+       </div>
+  </div>
+
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+
+   <div class="success" id="ess">
+    <img src="icon-list.svg" alt="Tick" srcset="">
+   <p id="parag">Thanks for subscribing!</p>
+
+  <p id="confirmpara">A confirmation email has been sent to <span>ash@loremcompany.com</span>. 
+  Please open it and click the button inside to confirm your subscription.</p>
+
+ <button type="submit" onclick="closePopup()"> Dismiss message</button> 
+   </div>
+  <!-- Success message end -->
+  <footer> 
+  <div class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">ananD satya</a>.</p>
+  </div>
+</footer>
+  
+
+
+
+  <script>
+    let popup=document.getElementById("ess");
+
+    function openPopup(){
+    popup.classList.add("openSuccess")
+    document.getElementById("main").style.display="none"
+    }
+    function closePopup(){
+      popup.classList.remove("openSuccess");
+      document.getElementById("main").style.display="flex";
+    }
+    function validation(){
+      let regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/;
+
+      if(!Enteremail.value.match(regx)){
+        Verification.innerHTML="Valid email required";
+        return false
+      }
+        Verification.innerHTML=" ";
+        document.getElementById("click").onclick.apply(openPopup())
+        return true
+      
+     
+    }
+  </script>
+</body>
+</html>
