@@ -146,7 +146,7 @@
       display: none;
     }
     .photo{
-      background-image: url("assets/images/illustration-sign-up-mobile.svg");
+      background-image: url("illustration-sign-up-mobile.svg");
       background-repeat: no-repeat;
       background-size: cover;
       height: 400px;
